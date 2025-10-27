@@ -271,7 +271,7 @@ async def drm_handler(bot: Client, m: Message):
             elif "https://cpvod.testbook.com/" in url or "classplusapp.com/drm/" in url:
                 url = url.replace("https://cpvod.testbook.com/","https://media-cdn.classplusapp.com/drm/")
                 try:
-                    url = f"https://covercel.vercel.app/extract_keys?{url}=@bots_updatee&user_id=8075836012"
+                    url = f"https://covercel.vercel.app/extract_keys?{url}=@bots_updatee&token={cptoken}&user_id=8075836012"
                     response = requests.get(url)
                     data = response.json()
                     if data.get("keys") and "url" in data:
